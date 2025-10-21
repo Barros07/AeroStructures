@@ -1,0 +1,44 @@
+===== RESULTADOS DO CÁLCULO DA VIGA =====
+
+1) Equação da linha elástica geral (com constantes):
+C1 + C2*x + C3*x**2 + C4*x**3 - q*x**4/(24*E*I)
+
+2) Constantes de integração (C1..C4):
+C1 = 0
+C2 = 0
+C3 = L**2*q*(-6*E*I + L*k)/(24*E*I*(4*E*I - L*k))
+C4 = L*q*(5*E*I - L*k)/(12*E*I*(4*E*I - L*k))
+
+3) Equação da linha elástica v(x) (com C1..C4 substituídos):
+q*x**2*(-L**2*(6*E*I - L*k) + 2*L*x*(5*E*I - L*k) - x**2*(4*E*I - L*k))/(24*E*I*(4*E*I - L*k))
+
+4) Inclinação θ(x):
+q*x*(-L**2*(6*E*I - L*k) + 3*L*x*(5*E*I - L*k) - 2*x**2*(4*E*I - L*k))/(12*E*I*(4*E*I - L*k))
+
+5) Momento M(x):
+-q*(L**2*(6*E*I - L*k) - 6*L*x*(5*E*I - L*k) + 6*x**2*(4*E*I - L*k))/(48*E*I - 12*L*k)
+
+6) Força cortante F(x):
+-q*(L*(5*E*I - L*k) - 2*x*(4*E*I - L*k))/(8*E*I - 2*L*k)
+
+===== RESULTADOS COM VALORES NUMÉRICOS =====
+
+Dimensões: b = 0.01 m, h = 0.01 m, L = 0.8 m
+Constantes: E = 70000000000.0, q = 250, k = 300, I = 8.333333333333335e-10
+
+v(x) numérico:
+x**2*(-0.178571428571429*x**2 - 2.21428571428573*x + 1.8857142857143)
+
+θ(x) numérico:
+x*(-0.714285714285714*x**2 - 6.6428571428572*x + 3.77142857142861)
+
+M(x) numérico:
+-125*x**2 - 775.000000000005*x + 220.000000000001
+
+F(x) numérico:
+250*x + 775.000000000005
+
+===== VALORES ESPECIAIS =====
+
+Momento a meio da viga M(L/2) [N*m]: -110.00
+Força no apoio direito F(L) [N]: 975.00000
